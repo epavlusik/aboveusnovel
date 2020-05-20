@@ -5,6 +5,10 @@ var context = canvas.getContext("2d");
 var width = canvas.getAttribute('width');
 var height = canvas.getAttribute('height');
 
+context.fillStyle = "white";
+context.font = "bold 20pt Courier";
+context.fillText("LOADING...",400,230);
+
 var currentpageshosted = 22;   // pocet stran
 	
 var mouseX;
