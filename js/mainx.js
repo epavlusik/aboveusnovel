@@ -6,7 +6,7 @@ var width = canvas.getAttribute('width');
 var height = canvas.getAttribute('height');
 
 context.fillStyle = "white";
-context.font = "bold 20pt Courier";
+context.font = "bold 30pt Courier";
 context.fillText("LOADING...",400,230);
 
 var currentpageshosted = 22;   // pocet stran
@@ -708,8 +708,9 @@ function clear() {
 function draw(){
                            //vykreslovanie pre menu
 	context.fillStyle = "white";
-        context.font = "bold 20pt Courier";
+        context.font = "bold 30pt Courier";
         context.fillText("LOADING...",400,230);
+	context.fillText("PLEASE WAIT",400,290);
 	context.drawImage(bgImage, 0, backgroundY);
 	context.drawImage(logoImage, 100,10);
 	context.drawImage(playImage, buttonX[0], buttonY[0]);
@@ -721,6 +722,8 @@ function draw(){
 		context.drawImage(logoxImage, logoxX[0] - (logoxSize/2), logoxY[0], logoxSize, logoxHeight);
 		context.drawImage(logoxImage, logoxX[1] - (logoxSize/2), logoxY[1], logoxSize, logoxHeight);
   }
+  context.font = "10px Arial";
+  context.fillStyle = "white";
   context.fillText("Copyright 2020 by Erik Pavlusik",400,630);
 }
 
