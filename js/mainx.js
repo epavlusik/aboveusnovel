@@ -707,6 +707,9 @@ function clear() {
 
 function draw(){
                            //vykreslovanie pre menu
+	context.fillStyle = "white";
+        context.font = "bold 20pt Courier";
+        context.fillText("LOADING...",400,230);
 	context.drawImage(bgImage, 0, backgroundY);
 	context.drawImage(logoImage, 100,10);
 	context.drawImage(playImage, buttonX[0], buttonY[0]);
