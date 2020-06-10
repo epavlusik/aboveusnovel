@@ -117,7 +117,7 @@ var floatingtext3 = 0;
 var floatingtext4 = 0;
 var displayedpage = new Image();  // toto asi nebude treba
 var text = '{"supertext":[' +
-'{"count":2,"startpositions":[-200,1200],"endpositions":[500,100],"vertposition":[50,800],"directions":[1,2],"length":[320,350],"width":[90,90]},' +  // p1
+'{"count":2,"startpositions":[-1500,1200],"endpositions":[500,100],"vertposition":[50,800],"directions":[1,2],"length":[320,350],"width":[90,90]},' +  // p1
 '{"count":3,"startpositions":[-400,1200,-2000],"endpositions":[500,100,300],"vertposition":[50,800,1100],"directions":[1,2,2],"length":[300,320,300],"width":[70,80,130]},' + // p2
 '{"count":2,"startpositions":[-400,2200],"endpositions":[500,100],"vertposition":[50,1100],"directions":[1,2],"length":[280,300],"width":[120,130]},' + // p3
 '{"count":4,"startpositions":[-900,1200,-1400,1800],"endpositions":[200,450,100,500],"vertposition":[250,350,950,700],"directions":[1,3,2,2],"length":[310,310,220,310],"width":[130,130,200,200]},' + // p4
