@@ -455,7 +455,7 @@ function update() {                  //srdce hry
     if(Game.level == 1) {
       if(firstframe) { 
         prvemomenty++; 
-        if(prvemomenty > 50) { 
+        if(prvemomenty > 150) { 
           firstframe = false;
           newpage = true;
         }
