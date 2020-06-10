@@ -280,14 +280,14 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
     if(Game.level == 0) {  
 		for(i = 0; i < buttonX.length; i++){
 			if(mouseX > buttonX[i] && mouseX < buttonX[i] + buttonWidth[i]){
-				if(mouseY > buttonY[0] && mouseY < buttonY[0] + buttonHeight[0]){    //tu sa aktivuje prvy level					 
-          Game.level = 1;     
-          clear();
+				if(mouseY > buttonY[0] && mouseY < buttonY[0] + buttonHeight[0]){    //tu sa aktivuje prvy leve	
 	  storyimageNames.forEach(function(name){
           image = new Image();  
           image.src = "Images/" + name;     
           pageimages.push(image);    
-          });
+          });				
+          Game.level = 1;     
+          clear();
           context.clearRect(0, 0, width, height);
           context.drawImage(Background, 0 ,0 , 960, 640); 
           vertpolohastranky = 0;
@@ -319,11 +319,6 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
         }        
       if(mouseY > buttonY[2] && mouseY < buttonY[2] + buttonHeight[2]){       // kliknutie tretej ikony - bio                                              
         clear(); 
-	moNames.forEach(function(name){
-        image = new Image();  
-        image.src = "Images/" + name;     
-        moimages.push(image);    
-        });
         context.fillStyle = "black";
         context.fillRect(0, 0, 960, 640);
         context.drawImage(erikbio, 50 ,50 , 860, 540);
@@ -332,6 +327,11 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
         }      
       if(mouseY > buttonY[3] && mouseY < buttonY[3] + buttonHeight[3]){       // kliknutie stvrtej ikony - making of
         clear();
+	moNames.forEach(function(name){
+        image = new Image();  
+        image.src = "Images/" + name;     
+        moimages.push(image);    
+        });
         monumber = 0;
         context.fillStyle = "black";
         context.fillRect(0, 0, 960, 640); 
