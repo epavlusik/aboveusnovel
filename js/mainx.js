@@ -155,11 +155,7 @@ var storyimageNames = ["page1.jpg", "page2.jpg", "page3.jpg", "page4.jpg", "page
 "page16.jpg", "page17.jpg", "page18.jpg", "page19.jpg", "page20.jpg","page21.jpg", "page22.jpg", "page23.jpg"];
 var pageimages = [];
 
-storyimageNames.forEach(function(name){
-    image = new Image();  
-    image.src = "Images/" + name;     
-   pageimages.push(image);    
-});
+
 var currentcharacter = 0;
 var characterNames = ["charpic_1.png", "charpic_2.png", "charpic_3.png", "charpic_4.png", "charpic_5.png", "charpic_6.png",
 "charpic_7.png", "charpic_8.png", "charpic_9.png","charpic_10.png", "charpic_11.png"];
@@ -185,11 +181,7 @@ var bioNames = ["chartext_1.png", "chartext_2.png", "chartext_3.png", "chartext_
 "chartext_6.png", "chartext_7.png", "chartext_8.png","chartext_9.png","chartext_10.png","chartext_11.png"];
 var bioimages = [];
 
-bioNames.forEach(function(name){
-    image = new Image();  
-    image.src = "Images/" + name;     
-    bioimages.push(image);    
-});
+
 
 logoxImage.src = "Images/logox.png";
 bgImage.onload = function(){
@@ -301,7 +293,12 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
 			if(mouseX > buttonX[i] && mouseX < buttonX[i] + buttonWidth[i]){
 				if(mouseY > buttonY[0] && mouseY < buttonY[0] + buttonHeight[0]){    //tu sa aktivuje prvy level					 
           Game.level = 1;     
-          clear();                                        
+          clear();
+	  storyimageNames.forEach(function(name){
+          image = new Image();  
+          image.src = "Images/" + name;     
+          pageimages.push(image);    
+          });
           context.clearRect(0, 0, width, height);
           context.drawImage(Background, 0 ,0 , 960, 640); 
           vertpolohastranky = 0;
@@ -315,14 +312,19 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
 				}
       if(mouseY > buttonY[1] && mouseY < buttonY[1] + buttonHeight[1]){    // kliknutie druhej ikony                                            
         pohybstory = -100;
-				casovacstory = 0;   // Tu nastavit ak sa chce pribeh pustit v neskorsej sekunde
-				druhypohyb = 300;
-				blikac = 0;
+	casovacstory = 0;   // Tu nastavit ak sa chce pribeh pustit v neskorsej sekunde
+	druhypohyb = 300;
+	blikac = 0;
         Game.level = 20;	
         modedemoon = true;										
         }        
       if(mouseY > buttonY[2] && mouseY < buttonY[2] + buttonHeight[2]){       // kliknutie tretej ikony - bio                                              
         clear(); 
+	bioNames.forEach(function(name){
+        image = new Image();  
+        image.src = "Images/" + name;     
+        bioimages.push(image);    
+        });
         context.fillStyle = "black";
         context.fillRect(0, 0, 960, 640);
         context.drawImage(erikbio, 50 ,50 , 860, 540);
