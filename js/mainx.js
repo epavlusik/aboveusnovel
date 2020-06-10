@@ -161,21 +161,10 @@ var characterNames = ["charpic_1.png", "charpic_2.png", "charpic_3.png", "charpi
 "charpic_7.png", "charpic_8.png", "charpic_9.png","charpic_10.png", "charpic_11.png"];
 var characterimages = [];
 
-characterNames.forEach(function(name){
-    image = new Image();  
-    image.src = "Images/" + name;     
-    characterimages.push(image);    
-});
 
 var monumber = 0;
 var moNames = ["making_1.png", "making_2.png", "making_3.png", "making_4.png", "making_5.png", "making_6.png"];
 var moimages = [];
-
-moNames.forEach(function(name){
-    image = new Image();  
-    image.src = "Images/" + name;     
-    moimages.push(image);    
-});
 
 var bioNames = ["chartext_1.png", "chartext_2.png", "chartext_3.png", "chartext_4.png", "chartext_5.png", 
 "chartext_6.png", "chartext_7.png", "chartext_8.png","chartext_9.png","chartext_10.png","chartext_11.png"];
@@ -310,7 +299,17 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
           prvemomenty = 0;
           nextpagetexts();                                       										                                                                                                                        
 				}
-      if(mouseY > buttonY[1] && mouseY < buttonY[1] + buttonHeight[1]){    // kliknutie druhej ikony                                            
+      if(mouseY > buttonY[1] && mouseY < buttonY[1] + buttonHeight[1]){    // kliknutie druhej ikony
+	bioNames.forEach(function(name){
+        image = new Image();  
+        image.src = "Images/" + name;     
+        bioimages.push(image);    
+        });
+	characterNames.forEach(function(name){
+        image = new Image();  
+        image.src = "Images/" + name;     
+        characterimages.push(image);    
+        });
         pohybstory = -100;
 	casovacstory = 0;   // Tu nastavit ak sa chce pribeh pustit v neskorsej sekunde
 	druhypohyb = 300;
@@ -320,10 +319,10 @@ function checkClick(mouseEvent){                    //sledovanie kliknutia mysi 
         }        
       if(mouseY > buttonY[2] && mouseY < buttonY[2] + buttonHeight[2]){       // kliknutie tretej ikony - bio                                              
         clear(); 
-	bioNames.forEach(function(name){
+	moNames.forEach(function(name){
         image = new Image();  
         image.src = "Images/" + name;     
-        bioimages.push(image);    
+        moimages.push(image);    
         });
         context.fillStyle = "black";
         context.fillRect(0, 0, 960, 640);
